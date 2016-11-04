@@ -9,13 +9,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.content.ContextCompat;
 
-public class MainActivity extends AppCompatActivity { /* When using Appcombat support library
+public class MainActivity extends AppCompatActivity { /* When using Appcompat support library
                                                          you need to extend Main Activity to
                                                          ActionBarActivity.
                                                       */
 
 
-    private Toolbar toolbar;                              // Declaring the Toolbar Object
+    private Toolbar toolbar;                              // Declaring the Toolbar Object and friends
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
@@ -53,26 +53,26 @@ public class MainActivity extends AppCompatActivity { /* When using Appcombat su
         which is below the tabs, its the tab itself.
          */
 
-        final TabLayout.Tab home = tabLayout.newTab();
-        final TabLayout.Tab inbox = tabLayout.newTab();
-        final TabLayout.Tab star = tabLayout.newTab();
+        final TabLayout.Tab tab1 = tabLayout.newTab();
+        final TabLayout.Tab tab2 = tabLayout.newTab();
+        final TabLayout.Tab tab3 = tabLayout.newTab();
 
         /*
         Setting Title text for our tabs respectively
          */
 
-        home.setText("Home");
-        inbox.setText("Inbox");
-        star.setText("Star");
+        tab1.setText("Home");
+        tab2.setText("Trap House");
+        tab3.setText("Dustin Nguyen");
 
         /*
         Adding the tab view to our tablayout at appropriate positions
         As I want home at first position I am passing home and 0 as argument to
         the tablayout and like wise for other tabs as well
          */
-        tabLayout.addTab(home, 0);
-        tabLayout.addTab(inbox, 1);
-        tabLayout.addTab(star, 2);
+        tabLayout.addTab(tab1, 0);
+        tabLayout.addTab(tab2, 1);
+        tabLayout.addTab(tab3, 2);
 
         /*
         TabTextColor sets the color for the title of the tabs, passing a ColorStateList here makes
