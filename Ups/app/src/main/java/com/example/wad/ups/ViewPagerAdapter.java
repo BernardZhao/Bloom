@@ -8,21 +8,33 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+    int mNumOfTabs;
 
-    public ViewPagerAdapter(FragmentManager fm) {
+    public ViewPagerAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
+        this.mNumOfTabs = NumOfTabs;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return new TabFragment();    // Which Fragment should be displayed by the viewpager for the given position
-        // In my case we are showing up only one fragment in all the three tabs so we are
-        // not worrying about the position and just returning the TabFragment
+
+        switch (position) {
+            case 0:
+                TabFragment1 tab1 = new TabFragment1();
+                return tab1;
+            case 1:
+                TabFragment2 tab2 = new TabFragment2();
+                return tab2;
+            case 2:
+                TabFragment3 tab3 = new TabFragment3();
+                return tab3;
+            default:
+                return null;
+        }
     }
 
     @Override
     public int getCount() {
-        return 3;           // As there are only 3 Tabs
+        return mNumOfTabs;
     }
-
 }

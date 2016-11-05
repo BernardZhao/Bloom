@@ -1,33 +1,29 @@
 package com.example.wad.ups;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v4.content.ContextCompat;
+        import android.content.Context;
+        import android.support.design.widget.TabLayout;
+        import android.support.v4.content.ContextCompat;
+        import android.support.v4.view.ViewPager;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.support.v7.widget.Toolbar;
+        import android.view.Menu;
+        import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity { /* When using Appcompat support library
-                                                         you need to extend Main Activity to
-                                                         ActionBarActivity.
-                                                      */
+public class MainActivity extends AppCompatActivity {
 
+    //Declaring All The Variables Needed
 
-    private Toolbar toolbar;                              // Declaring the Toolbar Object and friends
+    private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
-        setSupportActionBar(toolbar);                   // Setting toolbar as the ActionBar with setSupportActionBar() call
-
 
         /*
         Assigning view variables to thier respective view in xml
@@ -44,7 +40,7 @@ public class MainActivity extends AppCompatActivity { /* When using Appcompat su
         the default action bar thus making the toolbar work like a normal
         action bar.
          */
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
         viewPager.setAdapter(viewPagerAdapter);
         setSupportActionBar(toolbar);
 
@@ -61,9 +57,9 @@ public class MainActivity extends AppCompatActivity { /* When using Appcompat su
         Setting Title text for our tabs respectively
          */
 
-        tab1.setText("Home");
-        tab2.setText("Trap House");
-        tab3.setText("Dustin Nguyen");
+        tab1.setText("Real");
+        tab2.setText("Chibui");
+        tab3.setText("Hours");
 
         /*
         Adding the tab view to our tablayout at appropriate positions
@@ -75,10 +71,10 @@ public class MainActivity extends AppCompatActivity { /* When using Appcompat su
         tabLayout.addTab(tab3, 2);
 
         /*
-        TabTextColor sets the color for the title of the tabs, passing a ColorStateList here makes
+        TabTextColor lets the color for the title of the tabs, passing a ColorStateList here makes
         tab change colors in different situations such as selected, active, inactive etc
 
-        TabIndicatorColor sets the color for the indicator below the tabs
+        TabIndicatorColor sets the color for the indiactor below the tabs
          */
 
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.tab_selector));
@@ -91,8 +87,9 @@ public class MainActivity extends AppCompatActivity { /* When using Appcompat su
          */
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-    }
 
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
