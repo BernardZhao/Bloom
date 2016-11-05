@@ -1,6 +1,5 @@
 package com.example.wad.ups;
 
-        import android.content.Context;
         import android.support.design.widget.TabLayout;
         import android.support.v4.content.ContextCompat;
         import android.support.v4.view.ViewPager;
@@ -11,8 +10,6 @@ package com.example.wad.ups;
         import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-
-    //Declaring All The Variables Needed
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -26,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /*
-        Assigning view variables to thier respective view in xml
+        Assigning view variables to their respective view in xml
         by findViewByID method
          */
 
@@ -62,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
         tab3.setText("Hours");
 
         /*
-        Adding the tab view to our tablayout at appropriate positions
+        Adding the tab view to our TabLayout at appropriate positions
         As I want home at first position I am passing home and 0 as argument to
-        the tablayout and like wise for other tabs as well
+        the TabLayout and like wise for other tabs as well
          */
         tabLayout.addTab(tab1, 0);
         tabLayout.addTab(tab2, 1);
@@ -74,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         TabTextColor lets the color for the title of the tabs, passing a ColorStateList here makes
         tab change colors in different situations such as selected, active, inactive etc
 
-        TabIndicatorColor sets the color for the indiactor below the tabs
+        TabIndicatorColor sets the color for the indicator below the tabs
          */
 
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.tab_selector));
@@ -89,27 +86,5 @@ public class MainActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
