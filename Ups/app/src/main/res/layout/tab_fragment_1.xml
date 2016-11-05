@@ -17,7 +17,7 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
         android:src="@drawable/ic_plus"
-        android:background="@color/colorPrimary"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_anchor="@id/lvToDoList"
         app:layout_anchorGravity="bottom|right|end" />
 
