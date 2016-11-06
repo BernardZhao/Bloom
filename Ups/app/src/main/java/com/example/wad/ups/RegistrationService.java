@@ -17,7 +17,6 @@ public class RegistrationService extends IntentService {
     public RegistrationService() {
         super("RegistrationService");
     }
-
     @Override
     protected void onHandleIntent(Intent intent) {
         InstanceID myID = InstanceID.getInstance(this);
