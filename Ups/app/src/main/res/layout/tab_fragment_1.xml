@@ -2,21 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
+        <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_centerInParent="true"
         android:text="Tab 1"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
+=======
+>>>>>>> 821926e64f1fa5e70cc23eecbc00634f609e15e8
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
         android:src="@drawable/ic_plus"
         android:onClick="fabtap"
         app:backgroundTint="@color/colorPrimary"
-        app:layout_anchor="@id/lvToDoList"
         app:layout_anchorGravity="bottom|right|end" />
 
 </RelativeLayout>
