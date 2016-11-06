@@ -43,12 +43,8 @@ public class MainActivity extends AppCompatActivity {
         the default action bar thus making the toolbar work like a normal
         action bar.
          */
-<<<<<<< HEAD
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
-        tabLayout.setupWithViewPager(viewPager);
-=======
+
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
->>>>>>> 24daf9830319a3a93b8f2905d11f3ea9806bfe45
         viewPager.setAdapter(viewPagerAdapter);
         setSupportActionBar(toolbar);
 
