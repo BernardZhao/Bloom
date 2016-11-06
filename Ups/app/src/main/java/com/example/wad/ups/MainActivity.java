@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Intent i = new Intent(this, RegistrationService.class);
+        startService(i);
         /*
         Assigning view variables to their respective view in xml
         by findViewByID method
@@ -42,7 +43,12 @@ public class MainActivity extends AppCompatActivity {
         the default action bar thus making the toolbar work like a normal
         action bar.
          */
+<<<<<<< HEAD
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
+        tabLayout.setupWithViewPager(viewPager);
+=======
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+>>>>>>> 24daf9830319a3a93b8f2905d11f3ea9806bfe45
         viewPager.setAdapter(viewPagerAdapter);
         setSupportActionBar(toolbar);
 
@@ -75,13 +81,16 @@ public class MainActivity extends AppCompatActivity {
         /*
         TabTextColor lets the color for the title of the tabs, passing a ColorStateList here makes
         tab change colors in different situations such as selected, active, inactive etc
+<<<<<<< HEAD
+        TabIndicatorColor sets the color for the indicator below the tabs
+=======
 
         TabIndicatorColor sets the color for the indiactor below the tabs
+>>>>>>> 24daf9830319a3a93b8f2905d11f3ea9806bfe45
          */
 
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.tab_selector));
         tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.indicator));
-
         /*
         Adding a onPageChangeListener to the viewPager
         1st we add the PageChangeListener and pass a TabLayoutPageChangeListener so that Tabs Selection
