@@ -1,12 +1,12 @@
 {
   "project_info": {
-    "project_number": "475645226651",
-    "project_id": "psycologyapp-148622"
+    "project_number": "720193141595",
+    "project_id": "psychologyapp-148702"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:475645226651:android:e5bb7edcca8cf8df",
+        "mobilesdk_app_id": "1:720193141595:android:e5bb7edcca8cf8df",
         "android_client_info": {
           "package_name": "com.example.wad.ups"
         }
@@ -14,7 +14,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBEoP44RSMJVsVc1hEubVMJ25y1hBBwbzg"
+          "current_key": "AIzaSyCS0kE7iHFl1Rk6owf0r_izcRbHFBgXVWg"
         }
       ],
       "services": {

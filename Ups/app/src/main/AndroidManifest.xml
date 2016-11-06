@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wad.ups">
-    <permission
-        android:name="com.github.hathibelagal.pn.permission.C2D_MESSAGE"
-        android:protectionLevel="signature" />
-    <uses-permission
-        android:name="com.github.hathibelagal.pn.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <service android:name=".RegistrationService"
-        android:exported="false" />
-    <service
-        android:name=".NotificationsListenerService"
-        android:exported="false" >
-        <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        </intent-filter>
-    </service>
-    <service
-        android:name=".TokenRefreshListenerService"
-        android:exported="false">
-        <intent-filter>
-            <action android:name="com.google.android.gms.iid.InstanceID" />
-        </intent-filter>
-    </service>
+    <permission android:name="your.package.name.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="your.package.name.permission.C2D_MESSAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,14 +21,36 @@
             </intent-filter>
         </activity>
         <activity android:name=".Form"></activity>
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.github.hathibelagal.pn" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".TokenRefreshListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".RegistrationService"
+            android:exported="false"/>
+
+        <service
+            android:name=".NotificationsListenerService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
     </application>
-    <receiver
-        android:name="com.google.android.gms.gcm.GcmReceiver"
-        android:exported="true"
-        android:permission="com.google.android.c2dm.permission.SEND" >
-        <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            <category android:name="com.github.hathibelagal.pn" />
-        </intent-filter>
-    </receiver>
+
+
 </manifest>
