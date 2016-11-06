@@ -2,4 +2,8 @@
     <string name="app_name">Ups</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="notification">Notification Details</string>
+
+
 </resources>
