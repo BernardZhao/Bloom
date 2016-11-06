@@ -8,8 +8,18 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_centerInParent="true"
         android:text="Tab 1"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
+=======
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_plus"
+        android:onClick="fabtap"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_anchor="@id/lvToDoList"
+        app:layout_anchorGravity="bottom|right|end" />
+>>>>>>> 24daf9830319a3a93b8f2905d11f3ea9806bfe45
 
 </RelativeLayout>

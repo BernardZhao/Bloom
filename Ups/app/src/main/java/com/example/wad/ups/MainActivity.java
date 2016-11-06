@@ -10,6 +10,7 @@ package com.example.wad.ups;
         import android.support.v7.widget.Toolbar;
         import android.view.Menu;
         import android.view.MenuItem;
+        import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
          */
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
 
         /*
@@ -42,8 +43,12 @@ public class MainActivity extends AppCompatActivity {
         the default action bar thus making the toolbar work like a normal
         action bar.
          */
+<<<<<<< HEAD
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 3);
         tabLayout.setupWithViewPager(viewPager);
+=======
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+>>>>>>> 24daf9830319a3a93b8f2905d11f3ea9806bfe45
         viewPager.setAdapter(viewPagerAdapter);
         setSupportActionBar(toolbar);
 
@@ -76,7 +81,12 @@ public class MainActivity extends AppCompatActivity {
         /*
         TabTextColor lets the color for the title of the tabs, passing a ColorStateList here makes
         tab change colors in different situations such as selected, active, inactive etc
+<<<<<<< HEAD
         TabIndicatorColor sets the color for the indicator below the tabs
+=======
+
+        TabIndicatorColor sets the color for the indiactor below the tabs
+>>>>>>> 24daf9830319a3a93b8f2905d11f3ea9806bfe45
          */
 
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.tab_selector));
@@ -89,6 +99,22 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
     }
 
@@ -112,5 +138,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void fabtap(View view) {
+        Intent intent = new Intent(this, Form.class);
+        startActivity(intent);
     }
 }

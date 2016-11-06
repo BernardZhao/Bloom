@@ -8,16 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
-    int mNumOfTabs;
 
-    public ViewPagerAdapter(FragmentManager fm, int NumOfTabs) {
+    public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
-        this.mNumOfTabs = NumOfTabs;
     }
 
     @Override
     public Fragment getItem(int position) {
-
         switch (position) {
             case 0:
                 TabFragment1 tab1 = new TabFragment1();
@@ -35,6 +32,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return mNumOfTabs;
+        return 3;           // As there are only 3 Tabs
     }
+
 }
