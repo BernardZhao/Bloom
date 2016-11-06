@@ -1,16 +1,16 @@
 package com.example.wad.ups;
 
-        import android.content.Context;
-        import android.content.Intent;
-        import android.support.design.widget.TabLayout;
-        import android.support.v4.content.ContextCompat;
-        import android.support.v4.view.ViewPager;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.support.v7.widget.Toolbar;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
+import android.content.Context;
+import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -77,12 +77,7 @@ public class MainActivity extends AppCompatActivity {
         /*
         TabTextColor lets the color for the title of the tabs, passing a ColorStateList here makes
         tab change colors in different situations such as selected, active, inactive etc
-<<<<<<< HEAD
         TabIndicatorColor sets the color for the indicator below the tabs
-=======
-
-        TabIndicatorColor sets the color for the indiactor below the tabs
->>>>>>> 24daf9830319a3a93b8f2905d11f3ea9806bfe45
          */
 
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.tab_selector));
