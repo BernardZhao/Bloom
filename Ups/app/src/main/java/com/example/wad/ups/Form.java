@@ -21,7 +21,7 @@ public class Form extends AppCompatActivity {
         startActivity(intent);
         NotificationCompat.Builder mBuilder =
                 (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.mipmap.bloom)
+                        .setSmallIcon(R.mipmap.ic_bloom)
                         .setContentTitle("My notification")
                         .setContentText("Hello World!");
         NotificationManager mNotificationManager =
