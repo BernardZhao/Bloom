@@ -1,5 +1,6 @@
 package com.example.wad.ups;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,7 @@ public class Form extends AppCompatActivity {
         startActivity(intent);
         NotificationCompat.Builder mBuilder =
                 (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.ic_close_light)
+                        .setSmallIcon(R.mipmap.bloom)
                         .setContentTitle("My notification")
                         .setContentText("Hello World!");
         NotificationManager mNotificationManager =
