@@ -33,7 +33,7 @@ public class NotificationsListenerService extends GcmListenerService {
      */
     @Override
     public void onMessageReceived(String from, Bundle data) {
-        sendNotification(data.getBundle("notification").getString("title"), data.getBundle("notification").getString("body"), data.getBundle("notification").getString("icon") );
+        showNotification(data.getBundle("notification").getString("title"), data.getBundle("notification").getString("body"), data.getBundle("notification").getString("icon") );
     }
 
     /**
@@ -42,7 +42,7 @@ public class NotificationsListenerService extends GcmListenerService {
      *
      * @param message The alert message to be posted.
      */
-    private void sendNotification(String message, String message2, String icon) {
+    private void showNotification(String message, String message2, String icon) {
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         PendingIntent contentIntent =

@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         Setting Title text for our tabs respectively
          */
 
-        tab1.setText("Real");
-        tab2.setText("Chibui");
-        tab3.setText("Hours");
+        tab1.setText("Tab1");
+        tab2.setText("Tab2");
+        tab3.setText("Tab3");
 
         /*
         Adding the tab view to our tablayout at appropriate positions
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
          */
 
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.color.tab_selector));
-        tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.indicator));
+        tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.colorAccent));
         /*
         Adding a onPageChangeListener to the viewPager
         1st we add the PageChangeListener and pass a TabLayoutPageChangeListener so that Tabs Selection

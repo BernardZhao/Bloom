@@ -27,5 +27,6 @@ public class Form extends AppCompatActivity {
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotificationManager.notify(0, mBuilder.build());
+
     }
 }
