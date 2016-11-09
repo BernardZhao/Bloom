@@ -27,19 +27,32 @@
         android:paddingTop="60dp">
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_name"
+            android:id="@+id/input_layout_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/notification"
+                android:id="@+id/input_notification"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:hint="@string/notification" />
+                android:maxLines="1"
+                android:hint="@string/form1" />
         </android.support.design.widget.TextInputLayout>
 
-        <Button android:id="@+id/add"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:hint="@string/form2" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button android:id="@+id/formbutton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/add"
