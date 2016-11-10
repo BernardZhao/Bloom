@@ -31,14 +31,6 @@ public class Form extends AppCompatActivity {
     public void add(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        NotificationCompat.Builder mBuilder =
-                (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.mipmap.ic_bloom)
-                        .setContentTitle("My notification")
-                        .setContentText("Hello World!");
-        NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        mNotificationManager.notify(0, mBuilder.build());
-
+        NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
     }
 }
