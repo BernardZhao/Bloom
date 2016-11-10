@@ -55,7 +55,7 @@
         <Button android:id="@+id/formbutton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add"
+            android:text="@string/formbutton"
             android:background="@color/colorPrimary"
             android:layout_marginTop="40dp"
             android:onClick="add"
