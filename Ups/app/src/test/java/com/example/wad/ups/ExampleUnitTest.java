@@ -1,4 +1,4 @@
-package com.example.wad.ups;
+package com.vb.ups;
 
 import org.junit.Test;
 
