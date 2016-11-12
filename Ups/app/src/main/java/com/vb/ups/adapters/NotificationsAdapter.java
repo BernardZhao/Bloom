@@ -2,6 +2,7 @@ package com.vb.ups.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
     public NotificationsAdapter(Context context) {
         inflator = LayoutInflater.from(context);
         for(int i=0; i<20; i++) {
-            notificationArrayList.add(new Notification("",""));
+            notificationArrayList.add(new Notification(""+i,Integer.toString(0-i)));
         }
     }
 
@@ -33,7 +34,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
     public NotificationsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflator.inflate(R.layout.custom_row, parent, false);
         NotificationsViewHolder notificationsViewHolder = new NotificationsViewHolder(view);
-        return null;
+        return notificationsViewHolder;
     }
 
     @Override
@@ -44,7 +45,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
 
     @Override
     public int getItemCount() {
-        return 0;
+        return notificationArrayList.size();
     }
 
     class NotificationsViewHolder extends RecyclerView.ViewHolder{
