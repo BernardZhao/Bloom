@@ -13,14 +13,14 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.vb.ups.MainActivity">
+        <activity android:name="com.vb.ups.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.vb.ups.Form"></activity>
+        <activity android:name="com.vb.ups.activities.FormActivity"></activity>
 
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
@@ -33,18 +33,18 @@
         </receiver>
 
         <service
-            android:name="com.vb.ups.TokenRefreshListenerService"
+            android:name="com.vb.ups.services.TokenRefreshListenerService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.android.gms.iid.InstanceID" />
             </intent-filter>
         </service>
 
-        <service android:name="com.vb.ups.RegistrationService"
+        <service android:name="com.vb.ups.services.RegistrationService"
             android:exported="false"/>
 
         <service
-            android:name="com.vb.ups.NotificationsListenerService"
+            android:name="com.vb.ups.services.NotificationsListenerService"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
