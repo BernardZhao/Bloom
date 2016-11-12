@@ -58,7 +58,7 @@
             android:text="@string/formbutton"
             android:background="@color/colorPrimary"
             android:layout_marginTop="40dp"
-            android:onClick="onAddClicked"
+            android:onClick="add"
             android:textColor="@android:color/white"/>
 
     </LinearLayout>

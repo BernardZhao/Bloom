@@ -27,7 +27,8 @@ public class Form extends AppCompatActivity {
         inputNotification = (EditText) findViewById(R.id.input_notification);
         inputDescription = (EditText) findViewById(R.id.input_description);
     }
-    public void onAddClicked(View view) {
+
+    public void add(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
