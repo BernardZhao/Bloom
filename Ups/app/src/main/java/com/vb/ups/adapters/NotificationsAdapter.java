@@ -20,13 +20,10 @@ import java.util.ArrayList;
 public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdapter.NotificationsViewHolder> {
 
     private LayoutInflater inflator;
-    private ArrayList<Notification> notificationArrayList = (new ArrayList<Notification>());
+    public static ArrayList<Notification> notificationArrayList = (new ArrayList<Notification>());
 
     public NotificationsAdapter(Context context) {
         inflator = LayoutInflater.from(context);
-        for(int i=0; i<20; i++) {
-            notificationArrayList.add(new Notification(""+i,Integer.toString(0-i)));
-        }
     }
 
     //Inflates each custom_row.xml induvidually instead of manually doing it
@@ -54,5 +51,9 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.textItem);
         }
+    }
+
+    public static void addNotification(Notification n){
+        notificationArrayList.add(n);
     }
 }

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.vb.ups.activities.MainActivity;
+import com.vb.ups.adapters.NotificationsAdapter;
+import com.vb.ups.objects.Notification;
 import com.vb.ups.services.NotificationsListenerService;
 import com.vb.ups.R;
 
@@ -32,6 +34,7 @@ public class FormActivity extends AppCompatActivity {
     public void add(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
+        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString()));
+        //NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
     }
 }
