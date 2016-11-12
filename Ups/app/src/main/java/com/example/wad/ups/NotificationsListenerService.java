@@ -46,15 +46,15 @@ public class NotificationsListenerService extends GcmListenerService {
         NotificationManager mNotificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         PendingIntent contentIntent =
-                PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+                PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0);
 
         // Notifications using both a large and a small icon (which yours should!) need the large
         // icon as a bitmap. So we need to create that here from the resource ID, and pass the
         // object along in our notification builder. Generally, you want to use the app icon as the
         // small icon, so that users understand what app is triggering this notification.
-        Bitmap largeIcon = BitmapFactory.decodeResource(this.getResources(), R.drawable.ic_cloud_white_48dp);
+        Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_cloud_white_48dp);
         NotificationCompat.Builder mBuilder =
-                (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                (NotificationCompat.Builder) new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.ic_cloud_white_48dp)
                         .setLargeIcon(largeIcon)
                         .setContentTitle(message)
