@@ -1,4 +1,4 @@
-package com.example.wad.ups;
+package com.vb.ups.services;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -6,20 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.gcm.GcmListenerService;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-/**
- * Created by berna on 11/5/2016.
- */
+import com.vb.ups.R;
+import com.vb.ups.activities.MainActivity;
 
 public class NotificationsListenerService extends GcmListenerService {
 
@@ -33,7 +25,7 @@ public class NotificationsListenerService extends GcmListenerService {
      */
     @Override
     public void onMessageReceived(String from, Bundle data) {
-        showNotification(data.getBundle("notification").getString("title"), data.getBundle("notification").getString("body"), data.getBundle("notification").getString("icon") );
+        showNotification(data.getBundle("notification").getString("title"), data.getBundle("notification").getString("body"), data.getBundle("notification").getString("icon"), getApplicationContext());
     }
 
     /**
@@ -42,19 +34,19 @@ public class NotificationsListenerService extends GcmListenerService {
      *
      * @param message The alert message to be posted.
      */
-    private void showNotification(String message, String message2, String icon) {
+    public static void showNotification(String message, String message2, String icon, Context context) {
         NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         PendingIntent contentIntent =
-                PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+                PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0);
 
         // Notifications using both a large and a small icon (which yours should!) need the large
         // icon as a bitmap. So we need to create that here from the resource ID, and pass the
         // object along in our notification builder. Generally, you want to use the app icon as the
         // small icon, so that users understand what app is triggering this notification.
-        Bitmap largeIcon = BitmapFactory.decodeResource(this.getResources(), R.drawable.ic_cloud_white_48dp);
+        Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_cloud_white_48dp);
         NotificationCompat.Builder mBuilder =
-                (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                (NotificationCompat.Builder) new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.ic_cloud_white_48dp)
                         .setLargeIcon(largeIcon)
                         .setContentTitle(message)

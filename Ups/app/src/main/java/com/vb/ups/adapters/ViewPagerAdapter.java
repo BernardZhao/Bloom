@@ -1,11 +1,12 @@
-package com.example.wad.ups;
+package com.vb.ups.adapters;
 
-/**
- * Created by berna on 11/2/2016.
- */
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.vb.ups.fragments.TabFragment1;
+import com.vb.ups.fragments.TabFragment2;
+import com.vb.ups.fragments.TabFragment3;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 

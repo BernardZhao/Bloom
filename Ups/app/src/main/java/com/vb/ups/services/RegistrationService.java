@@ -1,4 +1,4 @@
-package com.example.wad.ups;
+package com.vb.ups.services;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -7,12 +7,10 @@ import android.util.Log;
 import com.google.android.gms.gcm.GcmPubSub;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
+import com.vb.ups.R;
 
 import java.io.IOException;
 
-/**
- * Created by berna on 11/5/2016.
- */
 public class RegistrationService extends IntentService {
     public RegistrationService() {
         super("RegistrationService");

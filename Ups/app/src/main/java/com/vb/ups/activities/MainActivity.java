@@ -1,6 +1,5 @@
-package com.example.wad.ups;
+package com.vb.ups.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -12,6 +11,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.vb.ups.R;
+import com.vb.ups.adapters.NotificationsAdapter;
+import com.vb.ups.services.RegistrationService;
+import com.vb.ups.adapters.ViewPagerAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     //Declaring All The Variables Needed
@@ -20,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void fabtap(View view) {
-        Intent intent = new Intent(this, Form.class);
+        Intent intent = new Intent(this, FormActivity.class);
         startActivity(intent);
     }
 }

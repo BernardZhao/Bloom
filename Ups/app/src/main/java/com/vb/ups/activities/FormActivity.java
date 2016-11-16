@@ -1,17 +1,20 @@
-package com.example.wad.ups;
+package com.vb.ups.activities;
 
-import android.app.Notification;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.support.v7.app.NotificationCompat;
-import android.app.NotificationManager;
 import android.widget.EditText;
 
-public class Form extends AppCompatActivity {
+import com.vb.ups.activities.MainActivity;
+import com.vb.ups.adapters.NotificationsAdapter;
+import com.vb.ups.objects.Notification;
+import com.vb.ups.services.NotificationsListenerService;
+import com.vb.ups.R;
+
+public class FormActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private EditText inputNotification, inputDescription;
@@ -31,14 +34,7 @@ public class Form extends AppCompatActivity {
     public void add(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        NotificationCompat.Builder mBuilder =
-                (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.mipmap.ic_bloom)
-                        .setContentTitle("My notification")
-                        .setContentText("Hello World!");
-        NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        mNotificationManager.notify(0, mBuilder.build());
-
+        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString()));
+        //NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
     }
 }
