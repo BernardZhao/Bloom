@@ -16,6 +16,8 @@ import com.vb.ups.adapters.NotificationsAdapter;
 import com.vb.ups.services.RegistrationService;
 import com.vb.ups.adapters.ViewPagerAdapter;
 
+import net.danlew.android.joda.JodaTimeAndroid;
+
 public class MainActivity extends AppCompatActivity {
 
     //Declaring All The Variables Needed
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        JodaTimeAndroid.init(this);
         setContentView(R.layout.activity_main);
         Intent i = new Intent(this, RegistrationService.class);
         startService(i);
