@@ -64,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
         Setting Title text for our tabs respectively
          */
 
-        tab1.setText("Tab1");
-        tab2.setText("Tab2");
-        tab3.setText("Tab3");
+        tab1.setText("Feed");
+        tab2.setText("Find");
+        tab3.setText("Share");
 
         /*
         Adding the tab view to our tablayout at appropriate positions

@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Ups</string>
 
+
     <string name="action_settings">Settings</string>
 
-    <string name="form1">Notification Details</string>
-    <string name="form2">Notification Details</string>
-    <string name="formbutton">Add</string>
 
+    <string name="form1">Notification Title</string>
+    <string name="form2">Notification Details</string>
+    <string name="formbutton1">Set Time</string>
+    <string name="formbutton2">Set Date</string>
+    <string name="formbuttonfinish">Add</string>
 
 </resources>

@@ -6,6 +6,60 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:timePickerDialogTheme">@style/TimePickerDialogTheme</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
     </style>
+
+
+    <style name="TextAppearence.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+
+
+
+
+    <style name="TimePickerDialogTheme" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="android:timePickerStyle">@style/TimePickerDialogStyle</item>
+    </style>
+
+    <style name="TimePickerDialogStyle" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:timePickerMode">clock</item>
+        <item name="android:headerBackground">@color/colorPrimary</item>
+        <item name="android:headerDayOfMonthTextAppearance">@color/tertiary_text</item>
+        <item name="android:headerYearTextAppearance">@color/tertiary_text</item>
+        <item name="android:headerAmPmTextAppearance">@color/tertiary_text</item>
+
+        <item name="android:headerTimeTextAppearance">@style/TextAppearance.TimePickerDialogStyle.TimeLabel</item> <!-- TimePicker Time *TextAppearance* -->
+        <item name="android:numbersTextColor">@color/secondary_text</item>
+        <item name="android:numbersSelectorColor">@color/colorAccent</item>
+        <item name="android:numbersBackgroundColor">@color/colorPrimaryLight</item>
+    </style>
+
+    <style name="TextAppearance.TimePickerDialogStyle.TimeLabel" parent="@android:style/TextAppearance.Material">
+        <item name="android:textSize">60sp</item> <!-- from -->
+        <item name="android:textColor">@color/tertiary_text</item>
+    </style>
+
+
+
+
+
+
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/colorPrimary</item>
+        <item name="android:dayOfWeekTextAppearance">@color/colorPrimaryLight</item>
+        <item name="android:yearListSelectorColor">@color/colorPrimaryLight</item>
+
+    </style>
+
+
+
+
 
 </resources>
