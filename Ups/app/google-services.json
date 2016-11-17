@@ -1,17 +1,28 @@
 {
   "project_info": {
     "project_number": "720193141595",
-    "project_id": "psychologyapp-148702"
+    "firebase_url": "https://psychologyapp-148702.firebaseio.com",
+    "project_id": "psychologyapp-148702",
+    "storage_bucket": "psychologyapp-148702.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:720193141595:android:e5bb7edcca8cf8df",
         "android_client_info": {
-          "package_name": "com.wad.ups"
+          "package_name": "com.example.wad.ups"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "720193141595-bhbu3nt6hvf1vk581r8o0464hblmuqvr.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "720193141595-7cm060ihmm6onfn8f8nn0ti7or7v135f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCS0kE7iHFl1Rk6owf0r_izcRbHFBgXVWg"
@@ -26,7 +37,55 @@
           "other_platform_oauth_client": []
         },
         "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720193141595:android:3a520096c95d0d22",
+        "android_client_info": {
+          "package_name": "com.wad.ups"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720193141595-k5cqopodr1oqlpr2llu7epfqngmkhmcm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wad.ups",
+            "certificate_hash": "E4B0831A080B2697F595F3F6A2A1993ECADFC54D"
+          }
+        },
+        {
+          "client_id": "720193141595-bhbu3nt6hvf1vk581r8o0464hblmuqvr.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "720193141595-7cm060ihmm6onfn8f8nn0ti7or7v135f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS0kE7iHFl1Rk6owf0r_izcRbHFBgXVWg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
           "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720193141595-bhbu3nt6hvf1vk581r8o0464hblmuqvr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
         }
       }
     }
