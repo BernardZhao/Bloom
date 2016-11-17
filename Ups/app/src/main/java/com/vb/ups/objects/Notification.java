@@ -3,7 +3,9 @@ package com.vb.ups.objects;
 public class Notification {
     private String title;
     private String description;
+    public Notification() {
 
+    }
     public Notification(String title, String description) {
         this.title = title;
         this.description = description;
