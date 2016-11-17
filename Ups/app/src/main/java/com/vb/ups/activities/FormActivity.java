@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.app.DialogFragment;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.vb.ups.activities.MainActivity;
 import com.vb.ups.adapters.NotificationsAdapter;
 import com.vb.ups.fragments.DatePickerFragment;
@@ -37,7 +38,7 @@ public class FormActivity extends AppCompatActivity {
     public void add(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString()));
+        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getUid()));
         //NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
     }
 

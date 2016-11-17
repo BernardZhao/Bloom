@@ -39,7 +39,9 @@ public class Notification {
         Notification that = (Notification) o;
 
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
-        return description != null ? description.equals(that.description) : that.description == null;
+        if (description != null ? !description.equals(that.description) : that.description != null)
+            return false;
+        return userID != null ? userID.equals(that.userID) : that.userID == null;
 
     }
 
