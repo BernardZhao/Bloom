@@ -6,7 +6,7 @@
     <string name="form1">Notification Details</string>
     <string name="form2">Notification Details</string>
     <string name="formbutton">Add</string>
-    <string name="title_text">Google Sign-In\nQuickstart</string>
+    <string name="title_text">Bloom Login</string>
 
     <!-- Sign-in status messages -->
     <string name="signed_in_fmt">Signed in as: %s</string>
