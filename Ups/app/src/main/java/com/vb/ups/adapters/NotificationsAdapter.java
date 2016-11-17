@@ -67,7 +67,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
 
     public static void addNotification(Notification n){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        DatabaseReference myRef = database.getReference(n.getTitle());
 
         myRef.setValue(n);
 
@@ -77,8 +77,14 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 Notification value = dataSnapshot.getValue(Notification.class);
+                boolean preexistingObject = false;
                 Log.d(TAG, "Value is: " + value.toString());
-                notificationArrayList.add(value);
+                for(Notification a : notificationArrayList){
+                    if(a.equals(value))
+                        preexistingObject = true;
+                }
+                if (!preexistingObject)
+                    notificationArrayList.add(value);
             }
 
             @Override

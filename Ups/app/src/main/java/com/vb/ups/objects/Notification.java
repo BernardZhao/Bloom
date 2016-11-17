@@ -3,12 +3,16 @@ package com.vb.ups.objects;
 public class Notification {
     private String title;
     private String description;
+    private String userID;
+
     public Notification() {
 
     }
-    public Notification(String title, String description) {
+
+    public Notification(String title, String description, String userID) {
         this.title = title;
         this.description = description;
+        this.userID = userID;
     }
 
     public String getDescription() {
@@ -39,11 +43,19 @@ public class Notification {
 
     }
 
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
     @Override
     public String toString() {
         return "Notification{" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
+                ", userID='" + userID + '\'' +
                 '}';
     }
 }
