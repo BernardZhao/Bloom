@@ -30,10 +30,16 @@ public class NotificationManager extends AsyncTask<Notification, Void, Notificat
             for(int i=0; i<NotificationsAdapter.notificationArrayList.size(); i++){
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 DateFormat timeFormat = new SimpleDateFormat("h:mm a");
+                Log.v("NotificationManager",(NotificationsAdapter.notificationArrayList.get(i).getTime()+timeFormat.format(new Date())));
                 if(NotificationsAdapter.notificationArrayList.get(i).getDate().equals(dateFormat.format(new Date())) && NotificationsAdapter.notificationArrayList.get(i).getTime().equals(timeFormat.format(new Date())) && !NotificationsAdapter.notificationArrayList.get(i).isSent()){
                     sendNotification(NotificationsAdapter.notificationArrayList.get(i));
                     NotificationsAdapter.notificationArrayList.get(i).setSent(true);
                 }
+            }
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }

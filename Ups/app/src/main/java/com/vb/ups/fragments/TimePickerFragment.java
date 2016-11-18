@@ -90,7 +90,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 
         //Make the 24 hour time format to 12 hour time format
         int currentHour;
-        if(hourOfDay>11)
+        if(hourOfDay>12)
         {
             currentHour = hourOfDay - 12;
         }

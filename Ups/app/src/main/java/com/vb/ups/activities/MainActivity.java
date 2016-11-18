@@ -13,6 +13,8 @@ import android.view.View;
 
 import com.vb.ups.R;
 import com.vb.ups.adapters.NotificationsAdapter;
+import com.vb.ups.async.NotificationManager;
+import com.vb.ups.objects.Notification;
 import com.vb.ups.services.RegistrationService;
 import com.vb.ups.adapters.ViewPagerAdapter;
 
@@ -112,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        NotificationManager notificationManager = new NotificationManager();
+        notificationManager.execute(new Notification("","","","",""));
     }
 
     @Override
