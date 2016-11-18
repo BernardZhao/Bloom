@@ -57,13 +57,13 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
         //Do something with the date chosen by the user
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         //CreateActivity.time = sdf;
         String dateString = year+"-"+(new DecimalFormat("00").format(month+1))+"-"+(new DecimalFormat("00").format(day));
         //CreateActivity.inputDate.setText(year+"-"+(new DecimalFormat("00").format(month+1))+"-"+(new DecimalFormat("00").format(day)));
 
 
-        TextView tv = (TextView) getActivity().findViewById(R.id.textview2);
+        TextView tv = (TextView) getActivity().findViewById(R.id.textDate);
 
         tv.setText(dateString);
 

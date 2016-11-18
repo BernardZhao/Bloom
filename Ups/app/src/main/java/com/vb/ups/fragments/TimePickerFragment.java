@@ -78,7 +78,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     public void onTimeSet(TimePicker view, int hourOfDay, int minute){
         //Do something with the user chosen time
         //Get reference of host activity (XML Layout File) TextView widget
-        TextView tv = (TextView) getActivity().findViewById(R.id.textview1);
+        TextView tv = (TextView) getActivity().findViewById(R.id.textTime);
         //Set a message for user
 
         //Get the AM or PM for current time
@@ -99,10 +99,10 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
             currentHour = hourOfDay;
         }
 
-        tv.setText("You have selected a time of:\n\n");
+        //tv.setText("You have selected a time of:\n\n");
         //Display the user changed time on TextView
         tv.setText(tv.getText()+ String.valueOf(currentHour)
-                + " : " + String.valueOf(minute) + " " + aMpM + "\n");
+                + ":" + String.valueOf(minute) + " " + aMpM);
 
     }
 }

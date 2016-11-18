@@ -27,6 +27,7 @@ public class FormActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private EditText inputNotification, inputDescription;
+    private TextView timeTextView, dateTextView;
     private TextInputLayout inputLayoutNotification, inputLayoutDescription, inputLayoutDate, inputLayoutTime;
 
 
@@ -40,6 +41,8 @@ public class FormActivity extends AppCompatActivity {
         inputLayoutTime = (TextInputLayout) findViewById(R.id.input_layout_time);
         inputNotification = (EditText) findViewById(R.id.input_notification);
         inputDescription = (EditText) findViewById(R.id.input_description);
+        timeTextView = (TextView) findViewById(R.id.textTime);
+        dateTextView = (TextView) findViewById(R.id.textDate);
     }
 
     private boolean validateNotification() {
@@ -69,7 +72,7 @@ public class FormActivity extends AppCompatActivity {
     }
 
     private boolean validateDate() {
-        TextView textView1 = (TextView) findViewById(R.id.textview1);
+        TextView textView1 = (TextView) findViewById(R.id.textDate);
 
         String currentlyShownText = textView1.getText().toString();
         if (currentlyShownText.trim().isEmpty()) {
@@ -84,7 +87,7 @@ public class FormActivity extends AppCompatActivity {
     }
 
     private boolean validateTime() {
-        TextView textView2 = (TextView) findViewById(R.id.textview2);
+        TextView textView2 = (TextView) findViewById(R.id.textTime);
 
         String currentlyShownText = textView2.getText().toString();
 
@@ -118,7 +121,7 @@ public class FormActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getUid(),"", ""));
+        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getUid(), timeTextView.getText().toString(), dateTextView.getText().toString()));
         //NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
     }
 
