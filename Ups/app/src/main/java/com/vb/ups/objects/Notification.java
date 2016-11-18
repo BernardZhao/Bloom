@@ -5,16 +5,18 @@ public class Notification{
     private String description;
     private String userID;
     private String time;
+    private String date;
 
     public Notification() {
 
     }
 
-    public Notification(String time, String userID, String title, String description) {
+    public Notification(String title, String description, String userID, String time, String date) {
         this.time = time;
         this.userID = userID;
         this.title = title;
         this.description = description;
+        this.date = date;
     }
 
     public String getDescription() {
@@ -56,6 +58,7 @@ public class Notification{
                 ", description='" + description + '\'' +
                 ", userID='" + userID + '\'' +
                 ", time='" + time + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 
@@ -70,7 +73,16 @@ public class Notification{
         if (description != null ? !description.equals(that.description) : that.description != null)
             return false;
         if (userID != null ? !userID.equals(that.userID) : that.userID != null) return false;
-        return time != null ? time.equals(that.time) : that.time == null;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
+        return date != null ? date.equals(that.date) : that.date == null;
 
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
