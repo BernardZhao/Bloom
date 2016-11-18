@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.FormActivity" />
-
+        <activity android:name=".activities.MainActivity" />
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:exported="true"
@@ -56,7 +56,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activities.MainActivity"></activity>
+
     </application>
 
 </manifest>

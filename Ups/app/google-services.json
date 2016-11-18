@@ -50,6 +50,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "720193141595-7ns5q5lbtfvjc2g2ep7gl9lbkgbnulqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wad.ups",
+            "certificate_hash": "F99A03197E1B0B3F47BC0E4F558D9B8B063947C9"
+          }
+        },
+        {
           "client_id": "720193141595-k5cqopodr1oqlpr2llu7epfqngmkhmcm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -38,7 +38,7 @@ public class FormActivity extends AppCompatActivity {
     public void add(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getUid()));
+        NotificationsAdapter.addNotification(new Notification(inputNotification.getText().toString(), inputDescription.getText().toString(), FirebaseAuth.getInstance().getCurrentUser().getUid(), ""));
         //NotificationsListenerService.showNotification("YOYO", "wahhhh", "woopdida", getApplicationContext());
     }
 
