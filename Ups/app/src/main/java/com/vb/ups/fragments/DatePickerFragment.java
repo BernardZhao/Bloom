@@ -15,6 +15,9 @@ import android.widget.TextView;
 import android.widget.DatePicker;
 import android.app.Dialog;
 
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+
 import com.vb.ups.R;
 
 import java.util.Calendar;
@@ -54,7 +57,17 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
         //Do something with the date chosen by the user
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //CreateActivity.time = sdf;
+        String dateString = year+"-"+(new DecimalFormat("00").format(month+1))+"-"+(new DecimalFormat("00").format(day));
+        //CreateActivity.inputDate.setText(year+"-"+(new DecimalFormat("00").format(month+1))+"-"+(new DecimalFormat("00").format(day)));
+
+
         TextView tv = (TextView) getActivity().findViewById(R.id.textview2);
+
+        tv.setText(dateString);
+
+        /*
         tv.setText("Date changed...");
         tv.setText(tv.getText() + "\nYear: " + year);
         tv.setText(tv.getText() + "\nMonth: " + month);
@@ -62,5 +75,6 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 
         String stringOfDate = day + "/" + month + "/" + year;
         tv.setText(tv.getText() + "\n\nFormatted date: " + stringOfDate);
+        */
     }
 }
