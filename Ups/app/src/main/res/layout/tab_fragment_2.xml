@@ -51,7 +51,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
                                 android:scaleType="centerCrop"
-                                android:background=""
                                 />
 
                             <LinearLayout
