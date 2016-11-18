@@ -9,7 +9,12 @@
     <string name="formbutton1">Set Time</string>
     <string name="formbutton2">Set Date</string>
     <string name="formbuttonfinish">Add</string>
-    <string name="title_text">Bloom Login</string>
+    <string name="title_text">Bloom</string>
+    <string name="err_msg_name">Enter the name of your note</string>
+    <string name="err_msg_description">Enter a description</string>
+    <string name="err_msg_date">Enter a date</string>
+    <string name="err_msg_time">Enter a time</string>
+
 
     <!-- Sign-in status messages -->
     <string name="signed_in_fmt">Signed in as: %s</string>
