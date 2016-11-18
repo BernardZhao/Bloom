@@ -6,6 +6,7 @@ public class Notification{
     private String userID;
     private String time;
     private String date;
+    private boolean sent = false;
 
     public Notification() {
 
@@ -84,5 +85,13 @@ public class Notification{
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public boolean isSent() {
+        return sent;
+    }
+
+    public void setSent(boolean sent) {
+        this.sent = sent;
     }
 }
