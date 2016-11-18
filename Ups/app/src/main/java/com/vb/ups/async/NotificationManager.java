@@ -3,6 +3,7 @@ package com.vb.ups.async;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.vb.ups.adapters.NotificationsAdapter;
 import com.vb.ups.objects.Notification;
 
@@ -31,7 +32,7 @@ public class NotificationManager extends AsyncTask<Notification, Void, Notificat
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 DateFormat timeFormat = new SimpleDateFormat("h:mm a");
                 Log.v("NotificationManager",(NotificationsAdapter.notificationArrayList.get(i).getTime()+timeFormat.format(new Date())));
-                if(NotificationsAdapter.notificationArrayList.get(i).getDate().equals(dateFormat.format(new Date())) && NotificationsAdapter.notificationArrayList.get(i).getTime().equals(timeFormat.format(new Date())) && !NotificationsAdapter.notificationArrayList.get(i).isSent()){
+                if(NotificationsAdapter.notificationArrayList.get(i).getDate().equals(dateFormat.format(new Date())) && NotificationsAdapter.notificationArrayList.get(i).getTime().equals(timeFormat.format(new Date())) && !NotificationsAdapter.notificationArrayList.get(i).getSent() && NotificationsAdapter.notificationArrayList.get(i).getUserID() == FirebaseAuth.getInstance().getCurrentUser().getUid()){
                     sendNotification(NotificationsAdapter.notificationArrayList.get(i));
                     NotificationsAdapter.notificationArrayList.get(i).setSent(true);
                 }
@@ -57,7 +58,7 @@ public class NotificationManager extends AsyncTask<Notification, Void, Notificat
             //data = new JSONObject("{ \"to\" : \"/topics/my_little_topic\", \"notification\" : { \"body\" : \"messageBody\", \"title\" : \"messageTitle\",\"icon\" : \"ic_cloud_white_48dp\"}}");
             data = new JSONObject("{ \"to\" : \"/topics/my_little_topic\", \"notification\" : { \"body\" : \""+description+"\", \"title\" : \""+title+"\",\"icon\" : \"ic_cloud_white_48dp\"}}");
         } catch (JSONException e) {
-            Log.e("NotificationPusher", e.toString());
+            Log.e("NotificationManager", e.toString());
         }
         try {
             makeRequest(url, data, MY_API_KEY);
@@ -66,7 +67,7 @@ public class NotificationManager extends AsyncTask<Notification, Void, Notificat
         }
 
     }
-    public static HttpResponse makeRequest(String path, JSONObject data, String MY_API_KEY) throws Exception
+    public static String makeRequest(String path, JSONObject data, String MY_API_KEY) throws Exception
     {
         //instantiates httpclient to make request
         DefaultHttpClient httpclient = new DefaultHttpClient();
@@ -86,7 +87,7 @@ public class NotificationManager extends AsyncTask<Notification, Void, Notificat
 
         //Handles what is returned from the page
         ResponseHandler responseHandler = new BasicResponseHandler();
-        return (HttpResponse) httpclient.execute(httpost, responseHandler);
+        return  (String) httpclient.execute(httpost, responseHandler);
     }
 
 }

@@ -52,6 +52,23 @@ public class Notification{
         this.userID = userID;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public boolean getSent() {
+        return sent;
+    }
+
+    public void setSent(boolean sent) {
+        this.sent = sent;
+    }
+
+
     @Override
     public String toString() {
         return "Notification{" +
@@ -77,21 +94,5 @@ public class Notification{
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
         return date != null ? date.equals(that.date) : that.date == null;
 
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public boolean isSent() {
-        return sent;
-    }
-
-    public void setSent(boolean sent) {
-        this.sent = sent;
     }
 }

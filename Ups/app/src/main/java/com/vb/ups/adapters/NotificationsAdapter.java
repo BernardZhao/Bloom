@@ -57,10 +57,11 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         return notificationArrayList.size();
     }
 
-    class NotificationsViewHolder extends RecyclerView.ViewHolder{
+    class NotificationsViewHolder extends RecyclerView.ViewHolder {
         TextView description;
         TextView title;
         TextView timeanddate;
+
         public NotificationsViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.textItem);
@@ -69,7 +70,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         }
     }
 
-    public static void addNotification(Notification n){
+    public static void addNotification(Notification n) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(n.getTitle());
         myRef.setValue(n);
@@ -77,41 +78,14 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.v("NotificationsAdapter", "onDataChangeCalled");
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 Notification value = dataSnapshot.getValue(Notification.class);
                 boolean preexistingObject = false;
                 Log.d(TAG, "Value is: " + value.toString());
-                for(Notification a : notificationArrayList){
-                    if(a.equals(value))
-                        preexistingObject = true;
-                }
-                if (!preexistingObject && value.getUserID() == FirebaseAuth.getInstance().getCurrentUser().getUid())
-                    notificationArrayList.add(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-    }
-    public static void receiveNotifications(Notification n){
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(n.getTitle());
-
-        myRef.setValue(n);
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                Notification value = dataSnapshot.getValue(Notification.class);
-                boolean preexistingObject = false;
-                Log.d(TAG, "Value is: " + value.toString());
-                for(Notification a : notificationArrayList){
-                    if(a.equals(value))
+                for (Notification a : notificationArrayList) {
+                    if (a.equals(value))
                         preexistingObject = true;
                 }
                 if (!preexistingObject && value.getUserID() == FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -126,4 +100,23 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         });
     }
 
+    public static void retrieveNotifications() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
+
+        // Attach a listener to read the data at our posts reference
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Notification notification = dataSnapshot.getValue(Notification.class);
+                //Log.v("NotificationsAdapter",notification.toString());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+
+    }
 }

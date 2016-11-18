@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         JodaTimeAndroid.init(this);
+        NotificationsAdapter.retrieveNotifications();
         setContentView(R.layout.activity_main);
         Intent i = new Intent(this, RegistrationService.class);
         startService(i);
