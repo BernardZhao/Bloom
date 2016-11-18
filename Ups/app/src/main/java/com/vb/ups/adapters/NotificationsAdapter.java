@@ -8,10 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.vb.ups.R;
 import com.vb.ups.objects.Notification;
 
 import java.util.ArrayList;
+
+import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 
 /**
  * Created by Admin on 11/12/2016.
@@ -24,6 +32,8 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
 
     public NotificationsAdapter(Context context) {
         inflator = LayoutInflater.from(context);
+
+
     }
 
     //Inflates each custom_row.xml induvidually instead of manually doing it
@@ -57,6 +67,32 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
     }
 
     public static void addNotification(Notification n){
-        notificationArrayList.add(n);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(n.getTitle());
+
+        myRef.setValue(n);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                Notification value = dataSnapshot.getValue(Notification.class);
+                boolean preexistingObject = false;
+                Log.d(TAG, "Value is: " + value.toString());
+                for(Notification a : notificationArrayList){
+                    if(a.equals(value))
+                        preexistingObject = true;
+                }
+                if (!preexistingObject && value.getUserID() == FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    notificationArrayList.add(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
     }
 }
