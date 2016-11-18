@@ -12,12 +12,13 @@ public class Notification{
 
     }
 
-    public Notification(String title, String description, String userID, String time, String date) {
+    public Notification(String title, String description, String userID, String time, String date, boolean sent) {
         this.time = time;
         this.userID = userID;
         this.title = title;
         this.description = description;
         this.date = date;
+        this.sent = sent;
     }
 
     public String getDescription() {

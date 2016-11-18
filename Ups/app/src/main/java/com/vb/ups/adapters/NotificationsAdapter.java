@@ -27,13 +27,13 @@ import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 
 public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdapter.NotificationsViewHolder> {
 
+
     private LayoutInflater inflator;
+
     public static ArrayList<Notification> notificationArrayList = (new ArrayList<Notification>());
 
     public NotificationsAdapter(Context context) {
         inflator = LayoutInflater.from(context);
-
-
     }
 
     //Inflates each custom_row.xml induvidually instead of manually doing it
@@ -98,25 +98,5 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
-    }
-
-    public static void retrieveNotifications() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
-
-        // Attach a listener to read the data at our posts reference
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Notification notification = dataSnapshot.getValue(Notification.class);
-                //Log.v("NotificationsAdapter",notification.toString());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
-
     }
 }

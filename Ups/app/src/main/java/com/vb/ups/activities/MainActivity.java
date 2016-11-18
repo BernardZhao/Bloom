@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.vb.ups.R;
-import com.vb.ups.adapters.NotificationsAdapter;
+import com.vb.ups.async.NotificationFirstUpdater;
 import com.vb.ups.async.NotificationManager;
 import com.vb.ups.objects.Notification;
 import com.vb.ups.services.RegistrationService;
@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        NotificationFirstUpdater firstUpdater = new NotificationFirstUpdater();
+        firstUpdater.execute(new Notification("","","","","",false));
         JodaTimeAndroid.init(this);
-        NotificationsAdapter.retrieveNotifications();
         setContentView(R.layout.activity_main);
         Intent i = new Intent(this, RegistrationService.class);
         startService(i);
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         NotificationManager notificationManager = new NotificationManager();
-        notificationManager.execute(new Notification("","","","",""));
+        notificationManager.execute(new Notification("","","","","",false));
     }
 
     @Override

@@ -44,10 +44,10 @@ public class NotificationsListenerService extends GcmListenerService {
         // icon as a bitmap. So we need to create that here from the resource ID, and pass the
         // object along in our notification builder. Generally, you want to use the app icon as the
         // small icon, so that users understand what app is triggering this notification.
-        Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_cloud_white_48dp);
+        Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_bloom);
         NotificationCompat.Builder mBuilder =
                 (NotificationCompat.Builder) new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.ic_cloud_white_48dp)
+                        .setSmallIcon(R.mipmap.ic_bloom)
                         .setLargeIcon(largeIcon)
                         .setContentTitle(message)
                         .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
