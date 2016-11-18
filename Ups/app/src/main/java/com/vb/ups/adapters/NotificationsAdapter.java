@@ -99,7 +99,6 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         DatabaseReference myRef = database.getReference(n.getTitle());
 
         myRef.setValue(n);
-        NotificationPusher.sendNotification(n);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
