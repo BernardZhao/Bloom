@@ -99,14 +99,14 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
             currentHour = hourOfDay;
         }
 
-        String hour = String.valueOf(currentHour);
-        if(currentHour<10) {
-            hour = ("0" + hour);
+        String minutes = String.valueOf(minute);
+        if(minute<10) {
+            minutes = ("0" + minutes);
         }
         //tv.setText("You have selected a time of:\n\n");
         //Display the user changed time on TextView
-        tv.setText(hour
-                + ":" + String.valueOf(minute) + " " + aMpM);
+        tv.setText(String.valueOf(currentHour)
+                + ":" + minutes + " " + aMpM);
 
     }
 }
