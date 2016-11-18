@@ -49,6 +49,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         Notification currentNotification = notificationArrayList.get(position);
         holder.title.setText(currentNotification.getTitle());
         holder.description.setText(currentNotification.getDescription());
+        holder.timeanddate.setText(currentNotification.getTime() + "\n" + currentNotification.getDate());
     }
 
     @Override
@@ -59,10 +60,12 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
     class NotificationsViewHolder extends RecyclerView.ViewHolder{
         TextView description;
         TextView title;
+        TextView timeanddate;
         public NotificationsViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.textItem);
             description = (TextView) itemView.findViewById(R.id.description);
+            timeanddate = (TextView) itemView.findViewById(R.id.timeanddate);
         }
     }
 

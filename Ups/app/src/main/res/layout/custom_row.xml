@@ -19,7 +19,7 @@
         android:paddingLeft="20dp"
         android:layout_toRightOf="@id/imageInRow"
         android:text="dummyText"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
     <TextView
@@ -31,5 +31,16 @@
         android:layout_height="wrap_content"
         android:text="dummyText"
         android:layout_gravity="center"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/timeanddate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dummyText"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_centerVertical="true"
         android:textSize="15sp"/>
 </RelativeLayout>
