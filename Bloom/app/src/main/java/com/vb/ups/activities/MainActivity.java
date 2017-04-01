@@ -6,7 +6,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -146,24 +145,5 @@ public class MainActivity extends AppCompatActivity {
     public void fabtap(View view) {
         Intent intent = new Intent(this, FormActivity.class);
         startActivity(intent);
-    }
-
-    public void addOneClicked(View view) {
-        ((CardView) findViewById(R.id.card_view11)).setVisibility(View.GONE);
-    }
-
-    public void addFourClicked(View view) {
-        ((CardView) findViewById(R.id.card_view12)).setVisibility(View.GONE);
-
-    }
-
-    public void addThreeClicked(View view) {
-        ((CardView) findViewById(R.id.card_view13)).setVisibility(View.GONE);
-
-    }
-
-    public void addTwoClicked(View view) {
-        ((CardView) findViewById(R.id.card_view14)).setVisibility(View.GONE);
-
     }
 }

@@ -15,22 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "720193141595-6b6hrguauif614rt0mu0pai5qtf10l4d.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.wad.ups",
-            "certificate_hash": "67076A9B15B17BCC255F4E6E6E50F0B02EB2EA2C"
-          }
-        },
-        {
-          "client_id": "720193141595-oo3rteh0dp4rp4pvnrean6vkkrkohvk8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.wad.ups",
-            "certificate_hash": "F99A03197E1B0B3F47BC0E4F558D9B8B063947C9"
-          }
-        },
-        {
           "client_id": "720193141595-bhbu3nt6hvf1vk581r8o0464hblmuqvr.apps.googleusercontent.com",
           "client_type": 3
         },
@@ -65,14 +49,6 @@
         }
       },
       "oauth_client": [
-        {
-          "client_id": "720193141595-1sh4e9a30evtvmrkmoatip01rgkp6h66.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.wad.ups",
-            "certificate_hash": "67076A9B15B17BCC255F4E6E6E50F0B02EB2EA2C"
-          }
-        },
         {
           "client_id": "720193141595-7ns5q5lbtfvjc2g2ep7gl9lbkgbnulqb.apps.googleusercontent.com",
           "client_type": 1,

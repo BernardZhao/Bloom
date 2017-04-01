@@ -1,4 +1,4 @@
-package com.vb.ups.async;
+package com.vb.upsgit.async;
 
 import android.os.AsyncTask;
 import android.util.Log;
