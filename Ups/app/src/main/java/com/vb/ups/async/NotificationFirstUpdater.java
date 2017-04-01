@@ -17,6 +17,7 @@ import static com.vb.ups.adapters.NotificationsAdapter.notificationArrayList;
 
 /**
  * Created by Admin on 11/18/2016.
+ * fuk
  */
 
 public class NotificationFirstUpdater extends AsyncTask<Notification, Void, Notification> {
